@@ -9,20 +9,24 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Database configuration
-define('DB_HOST', 'gateway01.ap-southeast-1.prod.aws.tidbcloud.com');
-define('DB_PORT', '4000');
-define('DB_NAME', 'hybrid_chatbot'); // TiDB Cloud free tier requires 'test' as the database name
-define('DB_USER', '29CBizv35USNifh.root');
-define('DB_PASS', 'mFZzDW3GRtRw2ZAL');
-define('DB_CHARSET', 'utf8mb4');
+define('DB_HOST', getenv('DB_HOST') ?: 'gateway01.ap-southeast-1.prod.aws.tidbcloud.com');
+define('DB_PORT', getenv('DB_PORT') ?: '4000');
+define('DB_NAME', getenv('DB_NAME') ?: 'test');
+define('DB_USER', getenv('DB_USER') ?: '29CBizv35USNifh.root');
+define('DB_PASS', getenv('DB_PASS') ?: 'mFZzDW3GRtRw2ZAL');
+define('DB_CHARSET', getenv('DB_CHARSET') ?: 'utf8mb4');
+
+// SSL configuration for TiDB Cloud
+define('DB_SSL_CA', getenv('DB_SSL_CA') ?: __DIR__ . '/../certs/ca.pem');
+define('DB_SSL_MODE', getenv('DB_SSL_MODE') ?: 'REQUIRED');
 
 // Python API configuration
-define('PYTHON_API_BASE_URL', 'https://url-chatbot-backend.vercel.app');
+define('PYTHON_API_BASE_URL', getenv('PYTHON_API_BASE_URL') ?: 'https://url-chatbot-backend.vercel.app');
 
 // Security configuration
-define('SECRET_KEY', 'askmaven');
-define('JWT_SECRET_KEY', 'askmaven');
-define('SESSION_LIFETIME', 3600 * 24); // 24 hours
+define('SECRET_KEY', getenv('SECRET_KEY') ?: 'askmaven');
+define('JWT_SECRET_KEY', getenv('JWT_SECRET_KEY') ?: 'askmaven');
+define('SESSION_LIFETIME', getenv('SESSION_LIFETIME') ?: 86400);
 
 // Email configuration (for notifications)
 define('SMTP_HOST', 'smtp.gmail.com');
