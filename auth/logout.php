@@ -23,5 +23,5 @@ if (isLoggedIn()) {
 }
 
 // Redirect to login page
-redirectTo('/AskMaven/auth/login.php');
+redirectTo('/auth/login.php');
 ?>
