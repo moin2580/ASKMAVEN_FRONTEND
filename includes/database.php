@@ -23,19 +23,15 @@ class Database {
     
     private function connect() {
         try {
-            $dsn = "mysql:host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET;
+            $dsn = "mysql:host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET . ";ssl_ca=" . DB_SSL_CA;
             $options = [
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
                 PDO::ATTR_EMULATE_PREPARES => false
             ];
-            // Add SSL options only if the constants exist
-            if (defined('PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT')) {
-                $options[PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT] = false;
-            }
-            if (defined('PDO::MYSQL_ATTR_SSL_CA')) {
-                $options[PDO::MYSQL_ATTR_SSL_CA] = '';
-            }
+            // SSL options for TiDB Cloud
+            $options[PDO::MYSQL_ATTR_SSL_CA] = DB_SSL_CA;
+            $options[PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT] = true;
             
             $this->connection = new PDO($dsn, DB_USER, DB_PASS, $options);
         } catch (PDOException $e) {
