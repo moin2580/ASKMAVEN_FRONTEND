@@ -3,13 +3,8 @@ services:
     name: askmaven-frontend
     env: php
     plan: free
-    # The following two lines are important for routing all requests to index.php
-    # which is standard for many PHP frameworks and applications.
-    apache:
-      conf: |
-        <IfModule mod_rewrite.c>
-          RewriteEngine On
-          RewriteCond %{REQUEST_FILENAME} !-f
-          RewriteCond %{REQUEST_FILENAME} !-d
-          RewriteRule . index.php [L]
-        </IfModule>
+    # This rewrite rule is essential for PHP applications.
+    # It directs all requests to your index.php file.
+    rewrites:
+      - source: /*
+        destination: /index.php
