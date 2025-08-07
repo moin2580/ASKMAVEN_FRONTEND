@@ -4,11 +4,11 @@ FROM php:8.1-apache
 # Enable mod_rewrite for clean URLs
 RUN a2enmod rewrite
 
-# Copy your application files
+# Copy all application files to Apache web root
 WORKDIR /var/www/html
-COPY AskMaven/ ./
+COPY . ./
 
-# Set proper permissionsW
+# Set proper permissions
 RUN chown -R www-data:www-data /var/www/html
 
 # Expose port 80
