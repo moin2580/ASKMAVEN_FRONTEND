@@ -1,6 +1,0 @@
-{
-    "require": {},
-    "scripts": {
-        "start": "vendor/bin/heroku-php-apache2"
-    }
-}
