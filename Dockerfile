@@ -6,8 +6,7 @@ RUN a2enmod rewrite
 
 # Copy your application files
 WORKDIR /var/www/html
-COPY askmaven/ ./
-
+COPY . ./
 
 # Set proper permissions
 RUN chown -R www-data:www-data /var/www/html
