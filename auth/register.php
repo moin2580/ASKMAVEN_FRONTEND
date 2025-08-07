@@ -7,7 +7,7 @@ require_once __DIR__ . '/../includes/database.php';
 
 // Redirect if already logged in
 if (isLoggedIn()) {
-    redirectTo('/AskMaven/index.php');
+    redirectTo('/index.php');
 }
 
 $error = '';
@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="/AskMaven/assets/css/theme.css" rel="stylesheet">
+    <link href="/assets/css/theme.css" rel="stylesheet">
     <style>
         /* Register Page Specific Styles */
         body {
@@ -461,7 +461,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
             <div class="register-divider">Already have an account?</div>
             
-            <a href="/AskMaven/auth/login.php" class="register-btn signin-btn">
+            <a href="/auth/login.php" class="register-btn signin-btn">
                 <i class="fas fa-sign-in-alt me-2"></i>Sign In
             </a>
         </div>
@@ -503,6 +503,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </footer>
     
-    <script src="/AskMaven/assets/js/animations.js"></script>
+    <script src="/assets/js/animations.js"></script>
 </body>
 </html>
