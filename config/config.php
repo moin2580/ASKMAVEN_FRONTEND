@@ -11,7 +11,7 @@ ini_set('display_errors', 1);
 // Database configuration
 define('DB_HOST', 'gateway01.ap-southeast-1.prod.aws.tidbcloud.com');
 define('DB_PORT', '4000');
-define('DB_NAME', 'test'); // TiDB Cloud free tier requires 'test' as the database name
+define('DB_NAME', 'hybrid_chatbot'); // TiDB Cloud free tier requires 'test' as the database name
 define('DB_USER', '29CBizv35USNifh.root');
 define('DB_PASS', 'mFZzDW3GRtRw2ZAL');
 define('DB_CHARSET', 'utf8mb4');
