@@ -6,7 +6,8 @@ RUN a2enmod rewrite
 RUN docker-php-ext-install pdo pdo_mysql
 # Copy your application files
 WORKDIR /var/www/html
-COPY AskMaven/ ./
+COPY . ./
+
 
 # Set proper permissionsW
 RUN chown -R www-data:www-data /var/www/html
