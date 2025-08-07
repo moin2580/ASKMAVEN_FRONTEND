@@ -148,7 +148,7 @@ function isAdmin() {
 
 function requireLogin() {
     if (!isLoggedIn()) {
-        header('Location: /AskMaven/auth/login.php');
+        header('Location: /auth/login.php');
         exit;
     }
 }
@@ -156,7 +156,7 @@ function requireLogin() {
 function requireAdmin() {
     requireLogin();
     if (!isAdmin()) {
-        header('Location: /AskMaven/index.php');
+        header('Location: /index.php');
         exit;
     }
 }
