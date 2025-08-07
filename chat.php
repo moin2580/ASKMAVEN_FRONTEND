@@ -55,7 +55,7 @@ $recentChats = $db->fetchAll(
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="/AskMaven/assets/css/theme.css" rel="stylesheet">
+    <link href="/assets/css/theme.css" rel="stylesheet">
     <style>
         /* Chat Page Specific Styles */
         body {
@@ -524,7 +524,7 @@ $recentChats = $db->fetchAll(
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-glass fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="/AskMaven/">
+            <a class="navbar-brand" href="/">
                 <div class="askmaven-logo"></div>
                 AskMaven
             </a>
@@ -536,23 +536,23 @@ $recentChats = $db->fetchAll(
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/AskMaven/">
+                        <a class="nav-link" href="/">
                             <i class="fas fa-home me-1"></i>Dashboard
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/AskMaven/chat.php">
+                        <a class="nav-link active" href="/chat.php">
                             <i class="fas fa-comments me-1"></i>Chat
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/AskMaven/scraping.php">
+                        <a class="nav-link" href="/scraping.php">
                             <i class="fas fa-spider me-1"></i>Website Scraping
                         </a>
                     </li>
                     <?php if (isAdmin()): ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="/AskMaven/admin/">
+                        <a class="nav-link" href="/admin/">
                             <i class="fas fa-cog me-1"></i>Admin
                         </a>
                     </li>
@@ -565,7 +565,7 @@ $recentChats = $db->fetchAll(
                             <i class="fas fa-user me-1"></i><?php echo htmlspecialchars($_SESSION['user_name']); ?>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/AskMaven/auth/logout.php">
+                            <li><a class="dropdown-item" href="/auth/logout.php">
                                 <i class="fas fa-sign-out-alt me-2"></i>Logout
                             </a></li>
                         </ul>
@@ -810,6 +810,6 @@ $recentChats = $db->fetchAll(
         </div>
     </footer>
     
-    <script src="/AskMaven/assets/js/animations.js"></script>
+    <script src="/assets/js/animations.js"></script>
 </body>
 </html>
