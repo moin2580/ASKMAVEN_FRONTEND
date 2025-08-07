@@ -32,7 +32,7 @@ $apiHealthy = $apiClient->healthCheck();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="/AskMaven/assets/css/theme.css" rel="stylesheet">
+    <link href="/assets/css/theme.css" rel="stylesheet">
     <style>
         /* Dashboard Page Specific Styles */
         body {
@@ -410,7 +410,7 @@ $apiHealthy = $apiClient->healthCheck();
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-glass fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="/AskMaven/">
+            <a class="navbar-brand" href="/">
                 <div class="askmaven-logo"></div>
                 AskMaven
             </a>
@@ -422,23 +422,23 @@ $apiHealthy = $apiClient->healthCheck();
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/AskMaven/">
+                        <a class="nav-link active" href="/">
                             <i class="fas fa-home me-1"></i>Dashboard
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/AskMaven/chat.php">
+                        <a class="nav-link" href="/chat.php">
                             <i class="fas fa-comments me-1"></i>Chat
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/AskMaven/scraping.php">
+                        <a class="nav-link" href="/scraping.php">
                             <i class="fas fa-spider me-1"></i>Website Scraping
                         </a>
                     </li>
                     <?php if (isAdmin()): ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="/AskMaven/admin/">
+                        <a class="nav-link" href="/admin/">
                             <i class="fas fa-cog me-1"></i>Admin
                         </a>
                     </li>
@@ -452,11 +452,11 @@ $apiHealthy = $apiClient->healthCheck();
                             <?php echo htmlspecialchars($_SESSION['user_name']); ?>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/AskMaven/profile.php">
+                            <li><a class="dropdown-item" href="/profile.php">
                                 <i class="fas fa-user-edit me-2"></i>Profile
                             </a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="/AskMaven/auth/logout.php">
+                            <li><a class="dropdown-item" href="/auth/logout.php">
                                 <i class="fas fa-sign-out-alt me-2"></i>Logout
                             </a></li>
                         </ul>
@@ -488,7 +488,7 @@ $apiHealthy = $apiClient->healthCheck();
                 </div>
                 <h3 class="action-title">Start Chatting</h3>
                 <p class="action-description">Ask questions and get AI-powered answers based on scraped website content.</p>
-                <a href="/AskMaven/chat.php" class="action-btn">
+                <a href="/chat.php" class="action-btn">
                     <i class="fas fa-arrow-right me-2"></i>Open Chat
                 </a>
             </div>
@@ -499,7 +499,7 @@ $apiHealthy = $apiClient->healthCheck();
                 </div>
                 <h3 class="action-title">Scrape Website</h3>
                 <p class="action-description">Add new websites by providing their sitemap URL for content extraction.</p>
-                <a href="/AskMaven/scraping.php" class="action-btn">
+                <a href="/scraping.php" class="action-btn">
                     <i class="fas fa-plus me-2"></i>Add Website
                 </a>
             </div>
@@ -510,7 +510,7 @@ $apiHealthy = $apiClient->healthCheck();
                 </div>
                 <h3 class="action-title">Chat History</h3>
                 <p class="action-description">View your previous conversations and AI responses.</p>
-                <a href="/AskMaven/chat.php" class="action-btn">
+                <a href="/chat.php" class="action-btn">
                     <i class="fas fa-list me-2"></i>View History
                 </a>
             </div>
@@ -524,7 +524,7 @@ $apiHealthy = $apiClient->healthCheck();
                     <div class="text-center" style="color: rgba(255, 255, 255, 0.6); padding: 30px;">
                         <i class="fas fa-comments" style="font-size: 3rem; margin-bottom: 15px;"></i>
                         <p>No conversations yet. Start chatting to see your history here!</p>
-                        <a href="/AskMaven/chat.php" class="action-btn" style="margin-top: 15px;">
+                        <a href="/chat.php" class="action-btn" style="margin-top: 15px;">
                             <i class="fas fa-comments me-2"></i>Start Your First Chat
                         </a>
                     </div>
@@ -547,7 +547,7 @@ $apiHealthy = $apiClient->healthCheck();
                         </div>
                     <?php endforeach; ?>
                     <div class="text-center" style="margin-top: 20px;">
-                        <a href="/AskMaven/chat.php" class="action-btn" style="font-size: 0.9rem; padding: 8px 16px;">
+                        <a href="/chat.php" class="action-btn" style="font-size: 0.9rem; padding: 8px 16px;">
                             <i class="fas fa-list me-2"></i>View All Conversations
                         </a>
                     </div>
@@ -599,6 +599,6 @@ $apiHealthy = $apiClient->healthCheck();
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/AskMaven/assets/js/animations.js"></script>
+    <script src="/assets/js/animations.js"></script>
 </body>
 </html>
