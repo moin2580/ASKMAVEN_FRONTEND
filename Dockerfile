@@ -3,12 +3,12 @@ FROM php:8.1-apache
 
 # Enable mod_rewrite for clean URLs
 RUN a2enmod rewrite
-
-# Copy all application files to Apache web root
+RUN docker-php-ext-install pdo pdo_mysql
+# Copy your application files
 WORKDIR /var/www/html
-COPY . ./
+COPY AskMaven/ ./
 
-# Set proper permissions
+# Set proper permissionsW
 RUN chown -R www-data:www-data /var/www/html
 
 # Expose port 80
