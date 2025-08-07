@@ -64,7 +64,7 @@ try {
 }
 
 function generatePDFContent($pages, $stats, $domain_filter = null) {
-    $title = $domain_filter ? "AskMaven Data Report - " . $domain_filter : "AskMaven Complete Data Report";
+    $title = $domain_filter ? "/ Data Report - " . $domain_filter : "/ Complete Data Report";
     
     $html = '<!DOCTYPE html>
 <html lang="en">
@@ -75,7 +75,7 @@ function generatePDFContent($pages, $stats, $domain_filter = null) {
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Modern AskMaven Report Styles */
+        /* Modern / Report Styles */
         * {
             margin: 0;
             padding: 0;
@@ -122,7 +122,7 @@ function generatePDFContent($pages, $stats, $domain_filter = null) {
         }
         
         .report-logo::before {
-            content: "AM";
+            content: "/";
             color: white;
             font-size: 32px;
             font-weight: bold;
@@ -497,7 +497,7 @@ function generatePDFContent($pages, $stats, $domain_filter = null) {
                 ' . ($domain_filter ? '<div class="meta-item"><i class="fas fa-globe"></i>Domain: ' . htmlspecialchars($domain_filter) . '</div>' : '') . '
                 <div class="meta-item">
                     <i class="fas fa-user"></i>
-                    AskMaven Analytics
+                    / Analytics
                 </div>
             </div>
         </div>
