@@ -3,6 +3,11 @@ services:
     name: askmaven-frontend
     env: php
     plan: free
-    rewrites:
-      - source: /*
-        destination: /index.php
+    apache:
+      conf: |
+        <IfModule mod_rewrite.c>
+          RewriteEngine On
+          RewriteCond %{REQUEST_FILENAME} !-f
+          RewriteCond %{REQUEST_FILENAME} !-d
+          RewriteRule . index.php [L]
+        </IfModule>
