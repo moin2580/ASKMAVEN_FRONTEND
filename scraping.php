@@ -61,7 +61,7 @@ $sitemapSources = $db->fetchAll(
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="/AskMaven/assets/css/theme.css" rel="stylesheet">
+    <link href="/assets/css/theme.css" rel="stylesheet">
     <style>
         /* Scraping Page Specific Styles */
         body {
@@ -476,19 +476,19 @@ $sitemapSources = $db->fetchAll(
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-glass fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="/AskMaven/">
+            <a class="navbar-brand" href="/">
                 <div class="askmaven-logo"></div>
                 AskMaven
             </a>
             
             <div class="navbar-nav ms-auto">
-                <a class="nav-link" href="/AskMaven/">
+                <a class="nav-link" href="/">
                     <i class="fas fa-home me-1"></i>Dashboard
                 </a>
-                <a class="nav-link" href="/AskMaven/chat.php">
+                <a class="nav-link" href="/chat.php">
                     <i class="fas fa-comments me-1"></i>Chat
                 </a>
-                <a class="nav-link" href="/AskMaven/auth/logout.php">
+                <a class="nav-link" href="/auth/logout.php">
                     <i class="fas fa-sign-out-alt me-1"></i>Logout
                 </a>
             </div>
@@ -633,7 +633,7 @@ $sitemapSources = $db->fetchAll(
                                                             title="Refresh Status">
                                                         <i class="fas fa-sync-alt"></i>
                                                     </button>
-                                                    <a href="/AskMaven/api/export_data.php?domain=<?php echo urlencode($source['domain']); ?>" 
+                                                    <a href="/api/export_data.php?domain=<?php echo urlencode($source['domain']); ?>" 
                                                        class="action-btn" 
                                                        target="_blank"
                                                        title="Download PDF Report"
@@ -661,7 +661,7 @@ $sitemapSources = $db->fetchAll(
     <script>
         async function checkStatus(sitemapId) {
             try {
-                const response = await fetch(`/AskMaven/api/scraping_status.php?id=${sitemapId}`);
+                const response = await fetch(`/api/scraping_status.php?id=${sitemapId}`);
                 const data = await response.json();
                 
                 if (data.success) {
@@ -739,6 +739,6 @@ $sitemapSources = $db->fetchAll(
         </div>
     </footer>
     
-    <script src="/AskMaven/assets/js/animations.js"></script>
+    <script src="/assets/js/animations.js"></script>
 </body>
 </html>
