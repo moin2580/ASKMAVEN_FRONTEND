@@ -6,9 +6,9 @@ RUN a2enmod rewrite
 
 # Copy your application files
 WORKDIR /var/www/html
-COPY . ./
+COPY AskMaven/ ./
 
-# Set proper permissions
+# Set proper permissionsW
 RUN chown -R www-data:www-data /var/www/html
 
 # Expose port 80
