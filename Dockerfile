@@ -5,9 +5,10 @@ FROM php:8.1-apache
 RUN a2enmod rewrite
 
 # Copy your application files
-COPY . /var/www/html/
+WORKDIR /var/www/html
+COPY AskMaven/ ./
 
-# Set proper permissions
+# Set proper permissionsW
 RUN chown -R www-data:www-data /var/www/html
 
 # Expose port 80

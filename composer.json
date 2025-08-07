@@ -1,6 +1,10 @@
 {
+<<<<<<< HEAD
     "require": {},
     "scripts": {
         "start": "vendor/bin/heroku-php-apache2"
     }
+=======
+    "require": {}
+>>>>>>> 7f4a85906d48e8ec9c049d594c0068d1f6fb1217
 }
