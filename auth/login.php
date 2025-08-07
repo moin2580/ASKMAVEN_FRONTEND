@@ -7,7 +7,7 @@ require_once __DIR__ . '/../includes/database.php';
 
 // Redirect if already logged in
 if (isLoggedIn()) {
-    redirectTo('/AskMaven/index.php');
+    redirectTo('/index.php');
 }
 
 $error = '';
@@ -50,12 +50,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     echo json_encode([
                         'success' => true,
                         'message' => 'Login successful',
-                        'redirect' => '/AskMaven/index.php'
+                        'redirect' => '/index.php'
                     ]);
                     exit;
                 } else {
                     // Normal redirect for non-AJAX requests
-                    redirectTo('/AskMaven/index.php');
+                    redirectTo('/index.php');
                 }
             } else {
                 $error = 'Invalid email or password.';
@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="/AskMaven/assets/css/theme.css" rel="stylesheet">
+    <link href="/assets/css/theme.css" rel="stylesheet">
     <style>
         /* Login Page Specific Styles */
         body {
@@ -491,7 +491,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
             <div class="login-divider">Don't have an account?</div>
             
-            <a href="/AskMaven/auth/register.php" class="login-btn create-btn">
+            <a href="/auth/register.php" class="login-btn create-btn">
                 <i class="fas fa-user-plus me-2"></i>Create Account
             </a>
             
@@ -514,7 +514,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/AskMaven/assets/js/animations.js"></script>
+    <script src="/assets/js/animations.js"></script>
     
     <!-- Toast Container -->
     <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 9999;">
@@ -589,7 +589,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     if (data.success) {
                         showToast('Login successful! Redirecting...', 'success');
                         setTimeout(() => {
-                            window.location.href = data.redirect || '/AskMaven/index.php';
+                            window.location.href = data.redirect || '/index.php';
                         }, 1000);
                     } else {
                         showToast(data.message || 'Login failed. Please try again.', 'error');
@@ -614,13 +614,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         // Successfully redirected to another page (not login page)
                         showToast('Login successful! Redirecting...', 'success');
                         setTimeout(() => {
-                            window.location.href = '/AskMaven/index.php';
+                            window.location.href = '/index.php';
                         }, 1000);
                     } else if (successElement) {
                         // Explicit success message found
                         showToast('Login successful! Redirecting...', 'success');
                         setTimeout(() => {
-                            window.location.href = '/AskMaven/index.php';
+                            window.location.href = '/index.php';
                         }, 1000);
                     } else {
                         // Check if we're still on login page (login failed)
@@ -631,7 +631,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             // Assume success if we're not on login page anymore
                             showToast('Login successful! Redirecting...', 'success');
                             setTimeout(() => {
-                                window.location.href = '/AskMaven/index.php';
+                                window.location.href = '/index.php';
                             }, 1000);
                         }
                     }
